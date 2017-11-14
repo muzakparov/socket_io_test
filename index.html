@@ -9,13 +9,7 @@
 <script>
 
     var socket = io();
-    socket.on('newclientconnect', function (data) {
-        document.body.innerHTML = '';
-        document.write(data.description);
-    });
-
-    var socket = io('/my-namespace');
-    socket.on('hi', function (data) {
+    socket.on('connectToRoom', function (data) {
         document.body.innerHTML = '';
         document.write(data);
     });
