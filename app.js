@@ -17,6 +17,12 @@ io.on('connection', function(socket) {
    });
 });
 
+var nsp = io.of('/my-namespace');
+nsp.on('connection', function(socket) {
+   console.log('someone connected');
+   nsp.emit('hi', 'Hello everyone!');
+});
+
 http.listen(3000, function () {
     console.log('listening on *:3000');
 });
